@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA-MP Portal | Área de Membros</title>
+    <link rel="stylesheet" href="style_samp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-gamepad"></i> SA-MP<span>PORTAL</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active" id="btn-inicio">Início</a></li>
+            <li><a href="#downloads" id="btn-downloads">Downloads</a></li>
+            <li><a href="https://discord.gg" target="_blank" class="discord-btn"><i class="fa-brands fa-discord"></i> Discord</a></li>
+            <li><a href="#" id="btn-logout" style="color: #ff4a4a;"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 id="welcome-title">San Andreas Multiplayer</h1>
+            <p>Descubra a história, as plataformas e jogue o clássico multiplayer até hoje.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="inicio-tab" class="tab-content active">
+            <article class="about-section">
+                <h2>O que é o SA-MP?</h2>
+                <p>O <strong>SA-MP (San Andreas Multiplayer)</strong> é uma modificação multijogador massiva para o jogo <em>Grand Theft Auto: San Andreas</em>. Ele permite que milhares de jogadores criem e joguem juntos em diversos modos de jogo, desde servidores de Roleplay (RP) estritos até arenas de mata-mata (Deathmatch) e corridas acrobáticas.</p>
+                <p><strong>Quando foi criado?</strong> O projeto do SA-MP iniciou seu desenvolvimento inicial por volta de 2005, tendo sua primeira versão pública oficial lançada em <strong>9 de maio de 2006</strong>. Desde então, revolucionou a forma como a comunidade interagia com o universo de San Andreas.</p>
+            </article>
+
+            <h2 class="section-title">Plataformas Disponíveis</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Samp Alyn</h3>
+                    <p>Um dos launchers mobile mais populares do cenário. O Alyn Samp Mobile oferece alta compatibilidade com modificações visuais, otimização de FPS para celulares intermediários e uma interface limpa para gerenciar seus servidores favoritos no Android.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-mobile-button"></i></div>
+                    <h3>Samp Eagle</h3>
+                    <p>Disponível diretamente na Google Play Store, o Eagle Vision SA-MP Launcher destaca-se pela facilidade de instalação e atualizações automáticas. Possui suporte nativo a chat de voz em servidores compatíveis e mapeamento de botões otimizado.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-desktop"></i></div>
+                    <h3>SA-MP de PC (open.mp)</h3>
+                    <p>A experiência original definitiva. Executado diretamente no computador, o launcher moderno do ecossistema <em>open.mp</em> garante retrocompatibilidade total com scripts antigos, correções de bugs de segurança da engine clássica e taxas de quadros (FPS) desbloqueadas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="downloads-tab" class="tab-content">
+            <h2 class="section-title">Central de Downloads</h2>
+            <p class="subtitle">Escolha a sua plataforma preferida e baixe os launchers oficiais revisados.</p>
+
+            <div class="download-grid">
+                <div class="dl-box">
+                    <div class="dl-header">
+                        <i class="fa-brands fa-android"></i>
+                        <h3>Alyn SA-MP</h3>
+                    </div>
+                    <span class="badge apk">Arquivo .APK</span>
+                    <p>Versão direta para instalação manual no Android com suporte a mods.</p>
+                    <a href="https://alynsampmobile.pro/game/alyn_sampmobile.apk" class="dl-btn">Baixar APK <i class="fa-solid fa-download"></i></a>
+                </div>
+
+                <div class="dl-box">
+                    <div class="dl-header">
+                        <i class="fa-brands fa-google-play"></i>
+                        <h3>Eagle SA-MP</h3>
+                    </div>
+                    <span class="badge store">Google Play</span>
+                    <p>Instalação segura e automatizada via loja de aplicativos oficial.</p>
+                    <a href="https://play.google.com/store/apps/details?id=eaglevision.samp.launcher" target="_blank" class="dl-btn store-btn">Ver na Play Store <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <div class="dl-box">
+                    <div class="dl-header">
+                        <i class="fa-solid fa-laptop"></i>
+                        <h3>Launcher PC</h3>
+                    </div>
+                    <span class="badge pc">Windows .EXE</span>
+                    <p>Instalador moderno do open.mp launcher para computadores.</p>
+                    <a href="https://github.com/openmultiplayer/launcher/releases/download/v1.6.1/omp-launcher-setup.exe" class="dl-btn pc-btn">Baixar para PC <i class="fa-solid fa-download"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 SA-MP Portal. Área Restrita para Membros.</p>
+    </footer>
+
+    <script>
+        // 1. SISTEMA DE SEGURANÇA: Verifica se o utilizador fez login de verdade
+        const usuarioLogado = localStorage.getItem('usuario_logado');
+        
+        if (!usuarioLogado) {
+            // Se não houver utilizador logado, expulsa para a tela de login imediatamente
+            alert('Acesso negado! Por favor, faça login primeiro.');
+            window.location.href = "index.html";
+        } else {
+            // Se estiver logado, personaliza o título com o nome dele
+            document.getElementById('welcome-title').innerText = `Bem-vindo, ${usuarioLogado}!`;
+        }
+
+        // 2. CONTROLO DAS ABAS
+        const btnInicio = document.getElementById('btn-inicio');
+        const btnDownloads = document.getElementById('btn-downloads');
+        const tabInicio = document.getElementById('inicio-tab');
+        const tabDownloads = document.getElementById('downloads-tab');
+
+        btnInicio.addEventListener('click', (e) => {
+            e.preventDefault();
+            btnDownloads.classList.remove('active');
+            btnInicio.classList.add('active');
+            tabDownloads.classList.remove('active');
+            tabInicio.classList.add('active');
+        });
+
+        btnDownloads.addEventListener('click', (e) => {
+            e.preventDefault();
+            btnInicio.classList.remove('active');
+            btnDownloads.classList.add('active');
+            tabInicio.classList.remove('active');
+            tabDownloads.classList.add('active');
+        });
+
+        // 3. FUNÇÃO DE LOGOUT (SAIR)
+        document.getElementById('btn-logout').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('usuario_logado'); // Limpa a sessão
+            window.location.href = "index.html"; // Volta para o login
+        });
+    </script>
+</body>
+</html>
