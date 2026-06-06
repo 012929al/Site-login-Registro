@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso ao Sistema</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box" id="loginBox">
+            <h2>Bem-vindo de volta</h2>
+            <p class="subtitle">Insira suas credenciais para acessar</p>
+            
+            <form id="loginForm" autocomplete="off">
+                <div class="input-group">
+                    <i class="fa-regular fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" required placeholder=" ">
+                    <label>E-mail</label>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" required placeholder=" ">
+                    <label>Senha</label>
+                </div>
+        
+                <div class="remember-box" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 14px; color: #94a3b8;">
+                    <input type="checkbox" id="rememberMe" style="cursor: pointer; width: 16px; height: 16px;">
+                    <label for="rememberMe" style="cursor: pointer; user-select: none;">Lembrar de mim</label>
+                </div>
+        
+                <button type="submit" class="btn">Entrar na Conta</button>
+                <p class="switch-text">Novo por aqui? <a href="#" id="toRegister">Crie uma conta</a></p>
+            </form>
+        </div>
+
+        <div class="form-box hidden" id="registerBox">
+            <h2>Criar Conta</h2>
+            <p class="subtitle">Cadastre-se para começar a usar</p>
+            
+            <form id="registerForm" autocomplete="off">
+                <div class="input-group">
+                    <i class="fa-regular fa-user input-icon"></i>
+                    <input type="text" id="regName" required placeholder=" ">
+                    <label>Nome Completo</label>
+                </div>
+                <div class="input-group">
+                    <i class="fa-regular fa-envelope input-icon"></i>
+                    <input type="email" id="regEmail" required placeholder=" ">
+                    <label>E-mail</label>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="regPassword" required placeholder=" ">
+                    <label>Senha</label>
+                </div>
+                <button type="submit" class="btn">Finalizar Cadastro</button>
+                <p class="switch-text">Já tem conta? <a href="#" id="toLogin">Fazer Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
